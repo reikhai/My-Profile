@@ -106,9 +106,8 @@ const useStyles = makeStyles()((theme) => {
       alignItems: "center",
       display: "flex",
       float: "left",
-      height: "90vh",
+      height: "70vh",
       justifyContent: "space-between",
-      // padding: "0 100px 50px",
       width: "100%",
       position: "relative",
       zIndex: "1000",
@@ -150,10 +149,27 @@ const useStyles = makeStyles()((theme) => {
       "& label": {
         paddingRight: "10px",
       },
-      "& img": {
-        float: "left",
-        margin: "10px 20px 10px 0px",
-        maxWidth: "80px",
+
+      [theme.breakpoints.up("xs")]: {
+        "& img": {
+          float: "left",
+          margin: "10px 10px 10px 0px",
+          maxWidth: "80px",
+        },
+      },
+      [theme.breakpoints.up("sm")]: {
+        "& img": {
+          float: "left",
+          margin: "10px 10px 10px 0px",
+          maxWidth: "80px",
+        },
+      },
+      [theme.breakpoints.up("md")]: {
+        "& img": {
+          float: "left",
+          margin: "10px 20px 10px 0px",
+          maxWidth: "80px",
+        },
       },
     },
 
