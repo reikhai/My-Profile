@@ -160,7 +160,7 @@ const useStyles = makeStyles()((theme) => {
     myProfile: {
       textAlign: "center",
       [theme.breakpoints.up("xs")]: {
-        width: "25%",
+        width: "35%",
         "& img": {
           objectFit: "cover",
           borderRadius: "16px 16px 16px 16px",
@@ -170,7 +170,7 @@ const useStyles = makeStyles()((theme) => {
           borderColor: "black",
           transform: "translateX(-1%) translateY(-1%) rotateZ(0deg)",
           transition: "300ms",
-          height: "200px",
+          height: "165px",
           boxShadow: "8px 8px 0px 0px #000000",
         },
       },
