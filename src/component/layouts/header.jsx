@@ -2,7 +2,6 @@ import React from "react";
 import { makeStyles } from "tss-react/mui";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import clsx from "clsx";
-import { grey } from "@mui/material/colors";
 import {
   SwipeableDrawer,
   Divider,
@@ -48,7 +47,7 @@ const useStyles = makeStyles()((theme) => {
       padding: "0",
       margin: "0",
       zIndex: "99",
-      position: "fixed",
+      position: "absolute",
       background: "linear-gradient(147deg, #000000 0%, #434343 74%)",
     },
 
@@ -232,6 +231,19 @@ const useStyles = makeStyles()((theme) => {
         },
       },
     },
+
+    secondContent: {
+      alignItems: "center",
+      display: "flex",
+      float: "left",
+      height: "70vh",
+      justifyContent: "space-between",
+      width: "100%",
+      position: "relative",
+      zIndex: "1000",
+      background: "white",
+      transform: "skewY(3deg)",
+    },
   };
 });
 
@@ -344,37 +356,6 @@ export default function Header() {
             </Grid>
           </Container>
         </div>
-        <Container>
-          <main>
-            <div className={classes.firstContent}>
-              <div className={classes.fontStyle}>
-                <h2>Rei Khai</h2>
-                <h4>Front-End Developer | 3 years Eperienced</h4>
-                <p>
-                  Hi, I'm Rei Khai from Selangor, Malaysia. I'm an experienced
-                  Front-End Developer with a demonstrated history of working in
-                  the information technology and services industry.
-                </p>
-                <div className={classes.skillContent}>
-                  <div className="skills">
-                    <label>Skills:</label>
-                    <img src={html} width={30} />
-                    <img src={css} width={30} />
-                    <img src={js} width={30} />
-                    <img src={vuejs} width={30} />
-                    <img src={reactjs} width={30} />
-                    <img src={laravel} width={30} />
-                    <img src={bootstrap} width={30} />
-                    <img src={materialUI} width={30} />
-                  </div>
-                </div>
-              </div>
-              <div className={classes.myProfile}>
-                <img src={khai} />
-              </div>
-            </div>
-          </main>
-        </Container>
       </ThemeProvider>
     </>
   );

@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "./component/layouts/header";
-// import Footer from "./component/layouts/footer";
-// import Main from "./routers/main";
+import Main from "./routers/main";
 
 export default function MasterLayout(props) {
   return (
@@ -9,11 +8,7 @@ export default function MasterLayout(props) {
       <div id="home">
         <Header />
       </div>
-      {/* <Main /> */}
-
-      {/* <div>
-        <Footer />
-      </div> */}
+      <Main />
     </>
   );
 }
