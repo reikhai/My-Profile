@@ -28,10 +28,10 @@ export default function Home() {
   console.log(classes);
   return (
     <>
-      <div className={classes.root}>
-        <FirstContent />
-        <SecondContent />
-      </div>
+      {/* <div className={classes.root}> */}
+      <FirstContent />
+      <SecondContent />
+      {/* </div> */}
     </>
   );
 }
