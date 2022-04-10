@@ -161,7 +161,7 @@ export default function FirstContent() {
           <div className={classes.firstContent}>
             <div className={classes.fontStyle}>
               <h2>Rei Khai</h2>
-              <h4>Front-End Developer | 3 years Eperienced</h4>
+              <h4>Front-End Developer | 3 years Eperiences</h4>
               <p>
                 Hi, I'm Rei Khai from Selangor, Malaysia. I'm an experienced
                 Front-End Developer with a demonstrated history of working in

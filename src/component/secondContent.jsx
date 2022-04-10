@@ -5,7 +5,6 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import AppBar from "@mui/material/AppBar";
 
 const useStyles = makeStyles()((theme) => {
   return {
@@ -53,7 +52,6 @@ const useStyles = makeStyles()((theme) => {
       [theme.breakpoints.up("xs")]: {
         display: "block",
         width: "100%",
-        bgcolor: "background.paper",
         //   transform: "skewY(3deg)",
         margin: "0px auto",
         maxWidth: "900px",
@@ -76,7 +74,6 @@ const useStyles = makeStyles()((theme) => {
       [theme.breakpoints.up("md")]: {
         display: `block`,
         flexGrow: 1,
-        bgcolor: "background.paper",
         display: "flex",
         height: 260,
         maxWidth: "900px",
@@ -291,6 +288,7 @@ export default function VerticalTabs() {
                   in various new project.
                 </li>
                 <li>Develop CMS in react.js</li>
+                <li>Revamp old CMS in react.js</li>
               </ul>
             </Typography>
           </TabPanel>

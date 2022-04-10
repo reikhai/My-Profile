@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "tss-react/mui";
 import FirstContent from "./firstContent";
 import SecondContent from "./secondContent";
+import ThirdContent from "./thirdContent";
 
 const useStyles = makeStyles()((theme) => {
   return {
@@ -28,10 +29,11 @@ export default function Home() {
   console.log(classes);
   return (
     <>
-      {/* <div className={classes.root}> */}
-      <FirstContent />
-      <SecondContent />
-      {/* </div> */}
+      <div className={classes.root}>
+        <FirstContent />
+        <SecondContent />
+        <ThirdContent />
+      </div>
     </>
   );
 }
