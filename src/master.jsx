@@ -9,10 +9,11 @@ export default function MasterLayout(props) {
     <>
       <div id="home">
         <Header />
+
+        <SideBar />
+        <Main />
+        <ScrollTopButton />
       </div>
-      <SideBar />
-      <Main />
-      <ScrollTopButton />
     </>
   );
 }

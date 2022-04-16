@@ -10,6 +10,7 @@ import laravel from "../images/laravel-2.svg";
 import bootstrap from "../images/bootstrap-4.svg";
 import materialUI from "../images/material-ui-1.svg";
 import khai from "../images/khai.jpg";
+import { motion } from "framer-motion";
 
 const useStyles = makeStyles()((theme) => {
   return {
@@ -22,7 +23,7 @@ const useStyles = makeStyles()((theme) => {
       alignItems: "center",
       display: "flex",
       float: "left",
-      height: "70vh",
+      height: "60vh",
       justifyContent: "space-between",
       width: "100%",
       position: "relative",
@@ -153,6 +154,16 @@ const useStyles = makeStyles()((theme) => {
 
 export default function FirstContent() {
   const { classes } = useStyles();
+  const skills = [
+    html,
+    css,
+    js,
+    vuejs,
+    reactjs,
+    laravel,
+    bootstrap,
+    materialUI,
+  ];
 
   return (
     <>
@@ -170,14 +181,15 @@ export default function FirstContent() {
               <div className={classes.skillContent}>
                 <div className="skills">
                   <label>Skills:</label>
-                  <img src={html} width={30} />
-                  <img src={css} width={30} />
-                  <img src={js} width={30} />
-                  <img src={vuejs} width={30} />
-                  <img src={reactjs} width={30} />
-                  <img src={laravel} width={30} />
-                  <img src={bootstrap} width={30} />
-                  <img src={materialUI} width={30} />
+                  {skills.map((value, index) => (
+                    <motion.div
+                      key={index}
+                      whileHover={{ scale: 1.5 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      <img src={value} width={30} />
+                    </motion.div>
+                  ))}
                 </div>
               </div>
             </div>
