@@ -76,7 +76,7 @@ export default function VerticalTabs() {
 
   return (
     <section>
-      <div className={classes.thirdContent}>
+      <div className={classes.thirdContent} id="project">
         <Container>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={4} md={4}>

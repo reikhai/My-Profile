@@ -134,7 +134,7 @@ export default function ColorsTimeline() {
 
   return (
     <section>
-      <div className={classes.secondContent}>
+      <div className={classes.secondContent} id="experience">
         <Box className={classes.mobileView}>
           <Tabs
             value={value}

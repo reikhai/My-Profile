@@ -157,8 +157,8 @@ export default function FirstContent() {
   return (
     <>
       <Container>
-        <main>
-          <div className={classes.firstContent}>
+        <section>
+          <div className={classes.firstContent} id="profile">
             <div className={classes.fontStyle}>
               <h2>Rei Khai</h2>
               <h4>Front-End Developer | 3 years Eperiences</h4>
@@ -185,7 +185,7 @@ export default function FirstContent() {
               <img src={khai} />
             </div>
           </div>
-        </main>
+        </section>
       </Container>
     </>
   );

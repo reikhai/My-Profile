@@ -343,7 +343,7 @@ export default function Header() {
             <Grid container spacing={2}>
               <Grid item xs={4}></Grid>
               <Grid item xs={8} className={classes.reduceGap}>
-                <List className={classes.navDisplayFlex} disablePadding={true}>
+                {/* <List className={classes.navDisplayFlex} disablePadding={true}>
                   {navLinks.map(({ title, path, locate }) => (
                     <a key={locate} className={classes.linkText}>
                       <ListItem button>
@@ -351,7 +351,7 @@ export default function Header() {
                       </ListItem>
                     </a>
                   ))}
-                </List>
+                </List> */}
               </Grid>
             </Grid>
           </Container>
