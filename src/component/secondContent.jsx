@@ -15,6 +15,7 @@ import TimelineDot from "@mui/lab/TimelineDot";
 import { motion } from "framer-motion";
 
 const useStyles = makeStyles()((theme) => {
+  const colorText = theme.palette.text.primary;
   const bgColor =
     theme.palette.mode === "dark"
       ? `linear-gradient(147deg, #000000 0%, ${theme?.palette?.background?.default} 74%)`
@@ -32,6 +33,7 @@ const useStyles = makeStyles()((theme) => {
         zIndex: "1000",
         padding: "15px 30px",
         background: `${bgColor}`,
+        color: `${colorText}`,
       },
       [theme.breakpoints.up("sm")]: {
         // display: "none",
@@ -46,6 +48,7 @@ const useStyles = makeStyles()((theme) => {
         zIndex: "1000",
         padding: "15px 30px",
         background: `${bgColor}`,
+        color: `${colorText}`,
       },
     },
 
