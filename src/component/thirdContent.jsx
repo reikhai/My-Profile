@@ -7,6 +7,7 @@ import foodbankBG from "../images/foodbank_bg.png";
 import foodbankLogo from "../images/food-bank-logo.png";
 import srBG from "../images/sr-bg.png";
 import srLogo from "../images/sr-logo.png";
+import { motion } from "framer-motion";
 
 const useStyles = makeStyles()((theme) => {
   const customeColor = theme.palette.primary.main;
@@ -79,7 +80,7 @@ export default function VerticalTabs() {
 
   return (
     <section>
-      <Box
+      <div
         className={classes.thirdContent}
         id="project"
         sx={{
@@ -90,7 +91,17 @@ export default function VerticalTabs() {
         <Container>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={4} md={4}>
-              <Box className={classes.projectThumbnail}>
+              <motion.div
+                className={classes.projectThumbnail}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ duration: 1 }}
+                variants={{
+                  visible: { opacity: 1, scale: 1 },
+                  hidden: { opacity: 0, scale: 0 },
+                }}
+              >
                 <img src={srBG} className={classes.projectFrame} />
                 <Box className={classes.projectTitle}>
                   <img
@@ -100,11 +111,21 @@ export default function VerticalTabs() {
                     }}
                   />
                 </Box>
-              </Box>
+              </motion.div>
             </Grid>
 
             <Grid item xs={12} sm={4} md={4}>
-              <Box className={classes.projectThumbnail}>
+              <motion.div
+                className={classes.projectThumbnail}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ duration: 1 }}
+                variants={{
+                  visible: { opacity: 1, scale: 1 },
+                  hidden: { opacity: 0, scale: 0 },
+                }}
+              >
                 <img src={foodbankBG} className={classes.projectFrame} />
                 <Box className={classes.projectTitle}>
                   <img
@@ -114,11 +135,21 @@ export default function VerticalTabs() {
                     }}
                   />
                 </Box>
-              </Box>
+              </motion.div>
             </Grid>
 
             <Grid item xs={12} sm={4} md={4}>
-              <Box className={classes.projectThumbnail}>
+              <motion.div
+                className={classes.projectThumbnail}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ duration: 1 }}
+                variants={{
+                  visible: { opacity: 1, scale: 1 },
+                  hidden: { opacity: 0, scale: 0 },
+                }}
+              >
                 <img className={classes.projectFrame} src={vmxBG} />
                 <Box className={classes.projectTitle}>
                   <img
@@ -128,11 +159,11 @@ export default function VerticalTabs() {
                     }}
                   />
                 </Box>
-              </Box>
+              </motion.div>
             </Grid>
           </Grid>
         </Container>
-      </Box>
+      </div>
     </section>
   );
 }
