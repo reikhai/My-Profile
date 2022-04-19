@@ -73,7 +73,7 @@ export default function Sidebar({ modeChange, theme }) {
           </Tooltip>
         </ToggleButton>
 
-        <ToggleButton onClick={modeChange} value="light">
+        <ToggleButton onClick={modeChange} value="theme">
           {theme.palette.mode === "dark" ? <MoonIcon /> : <SunIcon />}
         </ToggleButton>
       </ToggleButtonGroup>

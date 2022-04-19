@@ -35,8 +35,6 @@ const useStyles = makeStyles()((theme) => {
     },
 
     fontStyle: {
-      float: "left",
-      width: "35%",
       "& h2": {
         float: `left`,
         fontSize: "48px",
@@ -54,6 +52,20 @@ const useStyles = makeStyles()((theme) => {
       "& p": {
         margin: 0,
         padding: 0,
+      },
+
+      [theme.breakpoints.up("xs")]: {
+        float: "left",
+        width: "60%",
+      },
+
+      [theme.breakpoints.up("sm")]: {
+        float: "left",
+        width: "60%",
+      },
+      [theme.breakpoints.up("md")]: {
+        float: "left",
+        width: "35%",
       },
     },
 

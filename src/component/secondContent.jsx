@@ -31,7 +31,7 @@ const useStyles = makeStyles()((theme) => {
         width: "100%",
         position: "relative",
         zIndex: "1000",
-        padding: "15px 30px",
+        // padding: "15px 30px",
         background: `${bgColor}`,
         color: `${colorText}`,
       },
