@@ -5,14 +5,6 @@ import useScrollTrigger from "@mui/material/useScrollTrigger";
 import { Zoom, Box, Fab } from "@mui/material";
 import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
 
-const customeTheme = createTheme({
-  palette: {
-    primary: {
-      main: lightBlue[200],
-    },
-  },
-});
-
 export default function Home({ modeChange, theme }) {
   const trigger = useScrollTrigger({
     disableHysteresis: true,
@@ -36,7 +28,7 @@ export default function Home({ modeChange, theme }) {
         <Zoom in={trigger}>
           <Box
             onClick={handleClick}
-            data-scroll-to="home"
+            data-scroll-to="profile"
             role="presentation"
             sx={{ position: "fixed", bottom: 16, right: 16, zIndex: 9999 }}
           >

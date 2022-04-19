@@ -52,16 +52,6 @@ const useStyles = makeStyles()((theme) => {
       },
     },
 
-    withoutRotate: {
-      [theme.breakpoints.up("xs")]: {},
-      [theme.breakpoints.up("sm")]: {
-        //   transform: "skewY(3deg)",
-      },
-      [theme.breakpoints.up("md")]: {
-        //   transform: "skewY(3deg)",
-      },
-    },
-
     mobileView: {
       [theme.breakpoints.up("xs")]: {
         display: "block",
@@ -101,10 +91,10 @@ const useStyles = makeStyles()((theme) => {
     angleTop: {
       display: "block",
       position: "absolute",
-      top: "-13px",
+      top: "-29px",
       left: 0,
       width: "100%",
-      height: "15px",
+      height: "30px",
       backgroundImage: `url(${"https://www.shanemielke.com/img/angle_top.png"})`,
       backgroundRepeat: "no-repeat",
       backgroundPosition: "bottom center",
@@ -116,7 +106,7 @@ const useStyles = makeStyles()((theme) => {
     angleBottom: {
       display: "block",
       position: "absolute",
-      bottom: "-18px",
+      bottom: "-29px",
       left: 0,
       width: "100%",
       height: "30px",

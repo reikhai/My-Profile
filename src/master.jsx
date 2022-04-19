@@ -72,13 +72,13 @@ export default function MasterLayout() {
 
   return (
     <>
-      <div id="home" style={{ overflowX: "hidden" }}>
-        <ColorModeContext.Provider value={colorMode}>
-          <ThemeProvider theme={theme}>
+      <ColorModeContext.Provider value={colorMode}>
+        <ThemeProvider theme={theme}>
+          <div id="home" style={{ overflowX: "hidden" }}>
             <MyApp />
-          </ThemeProvider>
-        </ColorModeContext.Provider>
-      </div>
+          </div>
+        </ThemeProvider>
+      </ColorModeContext.Provider>
     </>
   );
 }

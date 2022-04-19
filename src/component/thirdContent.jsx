@@ -21,10 +21,9 @@ const useStyles = makeStyles()((theme) => {
         float: "left",
         justifyContent: "center",
         width: "100%",
-        position: "relative",
         zIndex: "1000",
         background: `linear-gradient(147deg, #000000 0%, ${bgColor} 74%)`,
-        padding: "15px 30px",
+        padding: "40px 0px",
       },
       [theme.breakpoints.up("sm")]: {
         // display: "none",
@@ -36,10 +35,9 @@ const useStyles = makeStyles()((theme) => {
         height: "40vh",
         justifyContent: "center",
         width: "100%",
-        position: "relative",
         zIndex: "1000",
         padding: "15px 30px",
-        // background: "linear-gradient(147deg, #000000 0%, #434343 74%)",
+        background: `linear-gradient(147deg, #000000 0%, ${bgColor} 74%)`,
       },
     },
 
@@ -54,6 +52,7 @@ const useStyles = makeStyles()((theme) => {
       borderColor: "black",
       "&:hover": {
         boxShadow: `8px 8px 0px 0px ${customeColor}`,
+        borderColor: `${customeColor}`,
       },
     },
 
@@ -90,7 +89,7 @@ export default function VerticalTabs() {
       >
         <Container>
           <Grid container spacing={3}>
-            <Grid item xs={12} sm={4} md={4}>
+            <Grid item xs={6} sm={4} md={4}>
               <motion.div
                 className={classes.projectThumbnail}
                 initial="hidden"
@@ -114,7 +113,7 @@ export default function VerticalTabs() {
               </motion.div>
             </Grid>
 
-            <Grid item xs={12} sm={4} md={4}>
+            <Grid item xs={6} sm={4} md={4}>
               <motion.div
                 className={classes.projectThumbnail}
                 initial="hidden"
@@ -138,7 +137,7 @@ export default function VerticalTabs() {
               </motion.div>
             </Grid>
 
-            <Grid item xs={12} sm={4} md={4}>
+            <Grid item xs={6} sm={4} md={4}>
               <motion.div
                 className={classes.projectThumbnail}
                 initial="hidden"
