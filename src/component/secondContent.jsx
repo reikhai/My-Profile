@@ -12,6 +12,7 @@ import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
+import { motion } from "framer-motion";
 
 const useStyles = makeStyles()((theme) => {
   const bgColor =
@@ -169,7 +170,10 @@ export default function ColorsTimeline() {
 
   return (
     <section>
-      <Box
+      <motion.div
+        initial={{ y: "50%", opacity: "0", scale: 0.5 }}
+        animate={{ y: 0, opacity: 1, scale: 1 }}
+        transition={{ duration: "1.6", ease: "easeOut" }}
         className={classes.secondContent}
         id="experience"
         sx={{
@@ -270,6 +274,7 @@ export default function ColorsTimeline() {
             </Typography>
           </TabPanel>
         </Box>
+
         <Box className={classes.webView}>
           <Timeline position="alternate">
             <TimelineItem>
@@ -357,7 +362,7 @@ export default function ColorsTimeline() {
         </Box>
 
         <div className={classes.angleBottom}></div>
-      </Box>
+      </motion.div>
     </section>
   );
 }

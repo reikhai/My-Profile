@@ -6,40 +6,10 @@ import { useTheme, ThemeProvider, createTheme } from "@mui/material/styles";
 import FirstContent from "./component/firstContent";
 import SecondContent from "./component/secondContent";
 import ThirdContent from "./component/thirdContent";
-import { amber, deepOrange, grey, lightBlue } from "@mui/material/colors";
+import { amber, grey, lightBlue } from "@mui/material/colors";
+import { motion } from "framer-motion";
 
 const ColorModeContext = createContext({ toggleColorMode: () => {} });
-
-const getDesignTokens = (mode) => ({
-  palette: {
-    mode,
-    primary: {
-      ...amber,
-      ...(mode === "dark" && {
-        main: amber[300],
-      }),
-    },
-    ...(mode === "dark" && {
-      background: {
-        default: deepOrange[900],
-        paper: deepOrange[900],
-      },
-    }),
-    text: {
-      ...(mode === "light"
-        ? {
-            primary: grey[900],
-            secondary: grey[800],
-          }
-        : {
-            primary: "#fff",
-            secondary: grey[500],
-          }),
-    },
-  },
-});
-
-// const darkModeTheme = createTheme(getDesignTokens("dark"));
 
 function MyApp() {
   const theme = useTheme();

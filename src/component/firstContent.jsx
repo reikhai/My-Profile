@@ -165,6 +165,27 @@ export default function FirstContent({ modeChange, theme }) {
     materialUI,
   ];
 
+  const list = {
+    visible: {
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.3,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      transition: {
+        when: "afterChildren",
+      },
+    },
+  };
+
+  const item = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: -100 },
+  };
+
   return (
     <>
       <section>
@@ -176,15 +197,25 @@ export default function FirstContent({ modeChange, theme }) {
             color: "text.primary",
           }}
         >
-          <div className={classes.fontStyle}>
-            <h2>Rei Khai</h2>
-            <h4>Front-End Developer | 3 years Eperiences</h4>
-            <p>
+          <motion.div
+            className={classes.fontStyle}
+            initial="hidden"
+            animate="visible"
+            variants={list}
+          >
+            <motion.h2 variants={item}>Rei Khai</motion.h2>
+
+            <motion.h4 variants={item}>
+              Front-End Developer | 3 years Eperiences
+            </motion.h4>
+
+            <motion.p variants={item}>
               Hi, I'm Rei Khai from Selangor, Malaysia. I'm an experienced
               Front-End Developer with a demonstrated history of working in the
               information technology and services industry.
-            </p>
-            <div className={classes.skillContent}>
+            </motion.p>
+
+            <motion.div className={classes.skillContent} variants={item}>
               <div className="skills">
                 <label>Skills:</label>
                 {skills.map((value, index) => (
@@ -197,11 +228,17 @@ export default function FirstContent({ modeChange, theme }) {
                   </motion.div>
                 ))}
               </div>
-            </div>
-          </div>
-          <div className={classes.myProfile}>
+            </motion.div>
+          </motion.div>
+
+          <motion.div
+            className={classes.myProfile}
+            initial={{ y: "50%", opacity: "0", scale: 0.5 }}
+            animate={{ y: 0, opacity: 1, scale: 1 }}
+            transition={{ duration: "1.6", ease: "easeOut" }}
+          >
             <img src={khai} />
-          </div>
+          </motion.div>
         </Box>
       </section>
     </>
