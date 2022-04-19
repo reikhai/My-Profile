@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "tss-react/mui";
-import { Container } from "@mui/material";
+import { Box } from "@mui/material";
 import html from "../images/icons8-html-5.svg";
 import css from "../images/icons8-css3.svg";
 import js from "../images/icons8-javascript.svg";
@@ -13,6 +13,8 @@ import khai from "../images/khai.jpg";
 import { motion } from "framer-motion";
 
 const useStyles = makeStyles()((theme) => {
+  const bgColor = theme.palette.background.default;
+
   return {
     reduceGap: {
       justifyContent: "flex-end",
@@ -24,17 +26,18 @@ const useStyles = makeStyles()((theme) => {
       display: "flex",
       float: "left",
       height: "60vh",
-      justifyContent: "space-between",
+      justifyContent: "center",
       width: "100%",
       position: "relative",
       zIndex: "1000",
+      padding: "15px 30px",
+      background: `linear-gradient(147deg, #000000 0%, ${bgColor} 74%)`,
     },
 
     fontStyle: {
       float: "left",
-      width: "60%",
+      width: "35%",
       "& h2": {
-        color: "#ffffff66",
         float: `left`,
         fontSize: "48px",
         fontWeight: 800,
@@ -43,14 +46,12 @@ const useStyles = makeStyles()((theme) => {
         width: "100%",
       },
       "& h4": {
-        color: "#ffffff66",
         float: "left",
         margin: "0 0 15px",
         padding: 0,
         width: "100%",
       },
       "& p": {
-        color: "#ffffff66",
         margin: 0,
         padding: 0,
       },
@@ -60,7 +61,6 @@ const useStyles = makeStyles()((theme) => {
       "& .skills": {
         display: "inline-flex",
         alignItems: "center",
-        color: "#ffffff66",
         padding: "10px 0px 0px 0px",
       },
       "& label": {
@@ -152,7 +152,7 @@ const useStyles = makeStyles()((theme) => {
   };
 });
 
-export default function FirstContent() {
+export default function FirstContent({ modeChange, theme }) {
   const { classes } = useStyles();
   const skills = [
     html,
@@ -167,38 +167,43 @@ export default function FirstContent() {
 
   return (
     <>
-      <Container>
-        <section>
-          <div className={classes.firstContent} id="profile">
-            <div className={classes.fontStyle}>
-              <h2>Rei Khai</h2>
-              <h4>Front-End Developer | 3 years Eperiences</h4>
-              <p>
-                Hi, I'm Rei Khai from Selangor, Malaysia. I'm an experienced
-                Front-End Developer with a demonstrated history of working in
-                the information technology and services industry.
-              </p>
-              <div className={classes.skillContent}>
-                <div className="skills">
-                  <label>Skills:</label>
-                  {skills.map((value, index) => (
-                    <motion.div
-                      key={index}
-                      whileHover={{ scale: 1.5 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <img src={value} width={30} />
-                    </motion.div>
-                  ))}
-                </div>
+      <section>
+        <Box
+          className={classes.firstContent}
+          id="profile"
+          sx={{
+            bgcolor: "background.default",
+            color: "text.primary",
+          }}
+        >
+          <div className={classes.fontStyle}>
+            <h2>Rei Khai</h2>
+            <h4>Front-End Developer | 3 years Eperiences</h4>
+            <p>
+              Hi, I'm Rei Khai from Selangor, Malaysia. I'm an experienced
+              Front-End Developer with a demonstrated history of working in the
+              information technology and services industry.
+            </p>
+            <div className={classes.skillContent}>
+              <div className="skills">
+                <label>Skills:</label>
+                {skills.map((value, index) => (
+                  <motion.div
+                    key={index}
+                    whileHover={{ scale: 1.5 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <img src={value} width={30} />
+                  </motion.div>
+                ))}
               </div>
             </div>
-            <div className={classes.myProfile}>
-              <img src={khai} />
-            </div>
           </div>
-        </section>
-      </Container>
+          <div className={classes.myProfile}>
+            <img src={khai} />
+          </div>
+        </Box>
+      </section>
     </>
   );
 }

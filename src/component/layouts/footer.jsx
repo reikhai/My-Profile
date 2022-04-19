@@ -5,7 +5,7 @@ import useScrollTrigger from "@mui/material/useScrollTrigger";
 import { Zoom, Box, Fab } from "@mui/material";
 import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
 
-const theme = createTheme({
+const customeTheme = createTheme({
   palette: {
     primary: {
       main: lightBlue[200],
@@ -13,7 +13,7 @@ const theme = createTheme({
   },
 });
 
-export default function Home() {
+export default function Home({ modeChange, theme }) {
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 100,

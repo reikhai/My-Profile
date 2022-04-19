@@ -1,11 +1,13 @@
-import React from "react";
+import { useState } from "react";
 import { ToggleButton, ToggleButtonGroup, Tooltip } from "@mui/material";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 import ListAltIcon from "@mui/icons-material/ListAlt";
 import PersonIcon from "@mui/icons-material/Person";
+import { MoonIcon } from "../darkMode/moon";
+import { SunIcon } from "../darkMode/sun";
 
-export default function Home() {
-  const [view, setView] = React.useState("profile");
+export default function Sidebar({ modeChange, theme }) {
+  const [view, setView] = useState("profile");
 
   const handleChange = (event, nextView) => {
     setView(nextView);
@@ -31,7 +33,7 @@ export default function Home() {
         onChange={handleChange}
         color="primary"
         sx={{
-          background: "white",
+          bgcolor: "background.default",
           position: "fixed",
           top: "280px",
           right: 0,
@@ -69,6 +71,10 @@ export default function Home() {
           <Tooltip title="Project" placement="left-start">
             <ListAltIcon />
           </Tooltip>
+        </ToggleButton>
+
+        <ToggleButton onClick={modeChange} value="light">
+          {theme.palette.mode === "dark" ? <MoonIcon /> : <SunIcon />}
         </ToggleButton>
       </ToggleButtonGroup>
     </>

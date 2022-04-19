@@ -1,5 +1,5 @@
 import { makeStyles } from "tss-react/mui";
-import * as React from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -14,17 +14,23 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 
 const useStyles = makeStyles()((theme) => {
+  const bgColor =
+    theme.palette.mode === "dark"
+      ? `linear-gradient(147deg, #000000 0%, ${theme?.palette?.background?.default} 74%)`
+      : "#fff";
+
   return {
     secondContent: {
       [theme.breakpoints.up("xs")]: {
         alignItems: "center",
         display: "flex",
         float: "left",
-        justifyContent: "space-between",
+        justifyContent: "center",
         width: "100%",
         position: "relative",
         zIndex: "1000",
-        background: "white",
+        padding: "15px 30px",
+        background: `${bgColor}`,
       },
       [theme.breakpoints.up("sm")]: {
         // display: "none",
@@ -33,20 +39,17 @@ const useStyles = makeStyles()((theme) => {
         alignItems: "center",
         display: "flex",
         float: "left",
-        // height: "40vh",
-        justifyContent: "space-between",
+        justifyContent: "center",
         width: "100%",
         position: "relative",
         zIndex: "1000",
-        background: "white",
-        transform: "skewY(-3deg)",
+        padding: "15px 30px",
+        background: `${bgColor}`,
       },
     },
 
     withoutRotate: {
-      [theme.breakpoints.up("xs")]: {
-        transform: "none",
-      },
+      [theme.breakpoints.up("xs")]: {},
       [theme.breakpoints.up("sm")]: {
         //   transform: "skewY(3deg)",
       },
@@ -59,9 +62,13 @@ const useStyles = makeStyles()((theme) => {
       [theme.breakpoints.up("xs")]: {
         display: "block",
         width: "100%",
-        //   transform: "skewY(3deg)",
         margin: "0px auto",
         maxWidth: "900px",
+        justifyContent: "center",
+        width: "100%",
+        position: "relative",
+        zIndex: "1000",
+        padding: "15px 30px",
       },
       [theme.breakpoints.up("sm")]: {
         display: "none",
@@ -79,14 +86,42 @@ const useStyles = makeStyles()((theme) => {
         display: "none",
       },
       [theme.breakpoints.up("md")]: {
-        // display: "block",
         flexGrow: 1,
         display: "contents",
         height: 260,
         maxWidth: "900px",
         margin: "0px auto",
-        // transform: "skewY(3deg)",
       },
+    },
+
+    angleTop: {
+      display: "block",
+      position: "absolute",
+      top: "-13px",
+      left: 0,
+      width: "100%",
+      height: "15px",
+      backgroundImage: `url(${"https://www.shanemielke.com/img/angle_top.png"})`,
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "bottom center",
+      backgroundSize: "100% 100%",
+      imageRendering: "-webkit-optimize-contrast",
+      zIndex: 9999,
+    },
+
+    angleBottom: {
+      display: "block",
+      position: "absolute",
+      bottom: "-18px",
+      left: 0,
+      width: "100%",
+      height: "30px",
+      backgroundImage: `url(${"https://www.shanemielke.com/img/angle_bottom.png"})`,
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "bottom center",
+      backgroundSize: "100% 100%",
+      imageRendering: "-webkit-optimize-contrast",
+      zIndex: 9999,
     },
   };
 });
@@ -125,7 +160,7 @@ function a11yProps(index) {
 }
 
 export default function ColorsTimeline() {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
   const { classes } = useStyles();
 
   const handleChange = (event, newValue) => {
@@ -134,7 +169,16 @@ export default function ColorsTimeline() {
 
   return (
     <section>
-      <div className={classes.secondContent} id="experience">
+      <Box
+        className={classes.secondContent}
+        id="experience"
+        sx={{
+          bgcolor: "background.default",
+          color: "text.primary",
+        }}
+      >
+        <div className={classes.angleTop}></div>
+
         <Box className={classes.mobileView}>
           <Tabs
             value={value}
@@ -226,9 +270,8 @@ export default function ColorsTimeline() {
             </Typography>
           </TabPanel>
         </Box>
-
         <Box className={classes.webView}>
-          <Timeline position="alternate" style={{ transform: "skewY(3deg)" }}>
+          <Timeline position="alternate">
             <TimelineItem>
               <TimelineSeparator>
                 <TimelineDot color="secondary" />
@@ -294,6 +337,7 @@ export default function ColorsTimeline() {
               </TimelineSeparator>
               <TimelineContent>
                 <Typography>September 2018 — December 2018</Typography>
+
                 <Typography component={"div"} variant={"caption"}>
                   Build and implement new web features
                 </Typography>
@@ -311,7 +355,9 @@ export default function ColorsTimeline() {
             </TimelineItem>
           </Timeline>
         </Box>
-      </div>
+
+        <div className={classes.angleBottom}></div>
+      </Box>
     </section>
   );
 }

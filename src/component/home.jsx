@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 import { lightBlue } from "@mui/material/colors";
 import { makeStyles } from "tss-react/mui";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -28,7 +28,7 @@ const useStyles = makeStyles()((theme) => {
   };
 });
 
-const theme = createTheme({
+const customTheme = createTheme({
   palette: {
     primary: {
       main: lightBlue[200],
@@ -36,14 +36,14 @@ const theme = createTheme({
   },
 });
 
-export default function Home() {
+export default function Home({ theme }) {
   const classes = useStyles();
-
+  console.log(theme);
   return (
     <>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={customTheme}>
         <div className={classes.root}>
-          <FirstContent />
+          <FirstContent theme={theme} />
           <SecondContent />
           <ThirdContent />
         </div>

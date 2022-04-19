@@ -1,40 +1,17 @@
 import React from "react";
 import { makeStyles } from "tss-react/mui";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import clsx from "clsx";
-import {
-  SwipeableDrawer,
-  Divider,
-  Container,
-  Box,
-  Grid,
-  List,
-  ListItem,
-  ListItemText,
-} from "@mui/material";
-import html from "../../images/icons8-html-5.svg";
-import css from "../../images/icons8-css3.svg";
-import js from "../../images/icons8-javascript.svg";
-import vuejs from "../../images/icons8-vue-js.svg";
-import reactjs from "../../images/icons8-react.svg";
-import laravel from "../../images/laravel-2.svg";
-import bootstrap from "../../images/bootstrap-4.svg";
-import materialUI from "../../images/material-ui-1.svg";
-import khai from "../../images/khai.jpg";
-// import ReorderIcon from "@material-ui/icons/Reorder";
-// import ScrollIntoView from "react-scroll-into-view";
+import { Container, Grid } from "@mui/material";
 
-const drawerWidth = 290;
-
-const theme = createTheme({
-  typography: {
-    allVariants: {
-      fontFamily: "serif",
-      textTransform: "none",
-      fontSize: 16,
-    },
-  },
-});
+// const theme = createTheme({
+//   typography: {
+//     allVariants: {
+//       fontFamily: "serif",
+//       textTransform: "none",
+//       fontSize: 16,
+//     },
+//   },
+// });
 
 const useStyles = makeStyles()((theme) => {
   return {
@@ -247,93 +224,8 @@ const useStyles = makeStyles()((theme) => {
   };
 });
 
-const drawStyles = makeStyles()((theme) => {
-  return {
-    list: {
-      [theme.breakpoints.up("xs")]: {
-        width: "auto",
-      },
-      [theme.breakpoints.up("sm")]: {
-        width: drawerWidth,
-      },
-      [theme.breakpoints.up("md")]: {
-        width: 350,
-      },
-    },
-    fullList: {
-      width: "auto",
-    },
-    drawer: {
-      [theme.breakpoints.up("xs")]: {
-        display: "block",
-        textAlign: "right",
-        padding: "20px",
-      },
-      [theme.breakpoints.up("sm")]: {
-        display: "block",
-        textAlign: "right",
-        padding: "20px",
-      },
-      [theme.breakpoints.up("md")]: {
-        display: "none",
-      },
-    },
-  };
-});
-
-export default function Header() {
+export default function Header({ modeChange, theme }) {
   const { classes } = useStyles();
-  const { classes2 } = drawStyles();
-
-  const [state, setState] = React.useState({
-    top: false,
-    left: false,
-    bottom: false,
-    right: false,
-  });
-
-  const toggleDrawer = (anchor, open) => (event) => {
-    if (
-      event &&
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
-    }
-
-    setState({ ...state, [anchor]: open });
-  };
-
-  const list = (anchor) => (
-    <div
-      className={clsx(classes.list, {
-        [classes.fullList]: anchor === "top" || anchor === "bottom",
-      })}
-      role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
-    >
-      <List>
-        {navLinks.map(({ title, path, locate }) => (
-          // <ScrollIntoView selector={locate} key={locate}>
-          <a key={locate} className={classes.linkText}>
-            <ListItem button>
-              <ListItemText primary={title} />
-            </ListItem>
-          </a>
-          // </ScrollIntoView>
-        ))}
-      </List>
-      <Divider />
-    </div>
-  );
-
-  const navLinks = [
-    { title: `Experience`, path: `/`, locate: `#home` },
-    { title: `Projects`, path: `/projects`, locate: `#projects` },
-    { title: `About`, path: `/about-us`, locate: `#about-us` },
-    { title: `Contact`, path: `/contact-us`, locate: `#contact-us` },
-  ];
 
   return (
     <>
@@ -342,17 +234,7 @@ export default function Header() {
           <Container>
             <Grid container spacing={2}>
               <Grid item xs={4}></Grid>
-              <Grid item xs={8} className={classes.reduceGap}>
-                {/* <List className={classes.navDisplayFlex} disablePadding={true}>
-                  {navLinks.map(({ title, path, locate }) => (
-                    <a key={locate} className={classes.linkText}>
-                      <ListItem button>
-                        <ListItemText primary={title} />
-                      </ListItem>
-                    </a>
-                  ))}
-                </List> */}
-              </Grid>
+              <Grid item xs={8} className={classes.reduceGap}></Grid>
             </Grid>
           </Container>
         </div>

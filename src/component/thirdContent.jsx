@@ -1,8 +1,6 @@
 import { makeStyles } from "tss-react/mui";
 import * as React from "react";
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
-import { Container } from "@mui/material";
+import { Container, Box, Grid } from "@mui/material";
 import vmxBG from "../images/vmx_bg.png";
 import VMXLogo from "../images/vmx-logo.png";
 import foodbankBG from "../images/foodbank_bg.png";
@@ -11,17 +9,21 @@ import srBG from "../images/sr-bg.png";
 import srLogo from "../images/sr-logo.png";
 
 const useStyles = makeStyles()((theme) => {
+  const customeColor = theme.palette.primary.main;
+  const bgColor = theme.palette.background.default;
+
   return {
     thirdContent: {
       [theme.breakpoints.up("xs")]: {
         alignItems: "center",
         display: "flex",
         float: "left",
-        justifyContent: "space-between",
+        justifyContent: "center",
         width: "100%",
         position: "relative",
         zIndex: "1000",
-        background: "linear-gradient(147deg, #000000 0%, #434343 74%)",
+        background: `linear-gradient(147deg, #000000 0%, ${bgColor} 74%)`,
+        padding: "15px 30px",
       },
       [theme.breakpoints.up("sm")]: {
         // display: "none",
@@ -31,11 +33,12 @@ const useStyles = makeStyles()((theme) => {
         display: "flex",
         float: "left",
         height: "40vh",
-        justifyContent: "space-between",
+        justifyContent: "center",
         width: "100%",
         position: "relative",
         zIndex: "1000",
-        background: "linear-gradient(147deg, #000000 0%, #434343 74%)",
+        padding: "15px 30px",
+        // background: "linear-gradient(147deg, #000000 0%, #434343 74%)",
       },
     },
 
@@ -44,12 +47,12 @@ const useStyles = makeStyles()((theme) => {
       maxWidth: "155px",
       height: "206px",
       borderRadius: "16px 16px 16px 16px",
-      boxShadow: "8px 8px 0px 0px #000000",
+      boxShadow: "none",
       borderWidth: "3px",
       borderStyle: "solid",
       borderColor: "black",
       "&:hover": {
-        boxShadow: "none",
+        boxShadow: `8px 8px 0px 0px ${customeColor}`,
       },
     },
 
@@ -76,7 +79,14 @@ export default function VerticalTabs() {
 
   return (
     <section>
-      <div className={classes.thirdContent} id="project">
+      <Box
+        className={classes.thirdContent}
+        id="project"
+        sx={{
+          bgcolor: "background.default",
+          color: "text.primary",
+        }}
+      >
         <Container>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={4} md={4}>
@@ -122,7 +132,7 @@ export default function VerticalTabs() {
             </Grid>
           </Grid>
         </Container>
-      </div>
+      </Box>
     </section>
   );
 }
