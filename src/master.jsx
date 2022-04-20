@@ -3,11 +3,7 @@ import ScrollTopButton from "./component/layouts/footer";
 import Main from "./routers/main";
 import SideBar from "./component/layouts/sideBar";
 import { useTheme, ThemeProvider, createTheme } from "@mui/material/styles";
-import FirstContent from "./component/firstContent";
-import SecondContent from "./component/secondContent";
-import ThirdContent from "./component/thirdContent";
 import { amber, grey, lightBlue } from "@mui/material/colors";
-import { motion } from "framer-motion";
 
 const ColorModeContext = createContext({ toggleColorMode: () => {} });
 
@@ -16,10 +12,7 @@ function MyApp() {
   const colorMode = useContext(ColorModeContext);
   return (
     <>
-      {/* <Main theme={theme} /> */}
-      <FirstContent theme={theme} />
-      <SecondContent theme={theme} />
-      <ThirdContent theme={theme} />
+      <Main />
       <SideBar theme={theme} modeChange={colorMode.toggleColorMode} />
       <ScrollTopButton modeChange={colorMode.toggleColorMode} theme={theme} />
     </>
