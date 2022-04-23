@@ -2,6 +2,7 @@ import { useState, useContext, useMemo, createContext } from "react";
 import ScrollTopButton from "./component/layouts/footer";
 import Main from "./routers/main";
 import SideBar from "./component/layouts/sideBar";
+import SocialSideBar from "./component/layouts/socialSideBar";
 import { useTheme, ThemeProvider, createTheme } from "@mui/material/styles";
 import { amber, grey, lightBlue } from "@mui/material/colors";
 
@@ -13,6 +14,7 @@ function MyApp() {
   return (
     <>
       <Main />
+      <SocialSideBar />
       <SideBar theme={theme} modeChange={colorMode.toggleColorMode} />
       <ScrollTopButton modeChange={colorMode.toggleColorMode} theme={theme} />
     </>
