@@ -215,16 +215,18 @@ export default function FirstContent({ modeChange, theme }) {
             animate="visible"
             variants={list}
           >
-            <motion.h2 variants={item}>Rei Khai</motion.h2>
+            <motion.h2 variants={item}>Hi, I'm Rei Khai</motion.h2>
 
             <motion.h4 variants={item}>
               Front-End Developer | 3 years Eperiences
             </motion.h4>
 
             <motion.p variants={item}>
-              Hi, I'm Rei Khai from Selangor, Malaysia. I'm an experienced
+              A web developer from Selangor, Malaysia. I'm an experienced
               Front-End Developer with a demonstrated history of working in the
-              information technology and services industry.
+              information technology and services industry. I like to code
+              things from scratch, and enjoy bringing ideas to life in the
+              browser.
             </motion.p>
 
             <motion.div className={classes.skillContent} variants={item}>
