@@ -1,6 +1,22 @@
 import { makeStyles } from "tss-react/mui";
 import * as React from "react";
-import { Container, Box, Grid } from "@mui/material";
+import {
+  Container,
+  Box,
+  Grid,
+  Link,
+  Card,
+  CardMedia,
+  Stack,
+  CardActionArea,
+  CardActions,
+} from "@mui/material";
+import reactjs from "../images/icons8-react.svg";
+import laravel from "../images/laravel-2.svg";
+import bootstrap from "../images/bootstrap-4.svg";
+import materialUI from "../images/material-ui-1.svg";
+import js from "../images/icons8-javascript.svg";
+
 import vmxBG from "../images/vmx_bg.png";
 import VMXLogo from "../images/vmx-logo.png";
 import foodbankBG from "../images/foodbank_bg.png";
@@ -42,10 +58,10 @@ const useStyles = makeStyles()((theme) => {
     },
 
     projectFrame: {
-      width: "155px",
-      maxWidth: "155px",
-      height: "206px",
-      borderRadius: "16px 16px 16px 16px",
+      width: "180px",
+      maxWidth: "180px",
+      // height: "206px",
+      borderRadius: "16px 16px 16px 16px!important",
       boxShadow: "none",
       borderWidth: "3px",
       borderStyle: "solid",
@@ -101,15 +117,38 @@ export default function VerticalTabs() {
                   hidden: { opacity: 0, scale: 0 },
                 }}
               >
-                <img src={srBG} className={classes.projectFrame} />
-                <Box className={classes.projectTitle}>
-                  <img
-                    src={srLogo}
-                    style={{
-                      maxWidth: "155px",
-                    }}
-                  />
-                </Box>
+                <Card className={classes.projectFrame}>
+                  <Link
+                    href="https://smart-reward.com/"
+                    underline="none"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <CardActionArea>
+                      <CardMedia
+                        component="img"
+                        height="206"
+                        image={srBG}
+                        alt="Smart Reward"
+                      />
+                      <Box className={classes.projectTitle}>
+                        <img
+                          src={srLogo}
+                          style={{
+                            maxWidth: "155px",
+                          }}
+                        />
+                      </Box>
+                    </CardActionArea>
+                  </Link>
+                  <CardActions sx={{ justifyContent: "center" }}>
+                    <Stack direction="row" spacing={4}>
+                      <img src={laravel} width={20} />
+                      <img src={bootstrap} width={20} />
+                      <img src={js} width={20} />
+                    </Stack>
+                  </CardActions>
+                </Card>
               </motion.div>
             </Grid>
 
@@ -125,15 +164,39 @@ export default function VerticalTabs() {
                   hidden: { opacity: 0, scale: 0 },
                 }}
               >
-                <img src={foodbankBG} className={classes.projectFrame} />
-                <Box className={classes.projectTitle}>
-                  <img
-                    src={foodbankLogo}
-                    style={{
-                      maxWidth: "35px",
-                    }}
-                  />
-                </Box>
+                <Card className={classes.projectFrame}>
+                  <Link
+                    href="http://foodbank.securelayers.cloud/admin"
+                    underline="none"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <CardActionArea>
+                      <CardMedia
+                        component="img"
+                        height="206"
+                        image={foodbankBG}
+                        alt="Foodbank"
+                      />
+                      <Box className={classes.projectTitle}>
+                        <img
+                          src={foodbankLogo}
+                          style={{
+                            maxWidth: "35px",
+                          }}
+                        />
+                      </Box>
+                    </CardActionArea>
+                  </Link>
+
+                  <CardActions sx={{ justifyContent: "center" }}>
+                    <Stack direction="row" spacing={4}>
+                      <img src={laravel} width={20} />
+                      <img src={reactjs} width={20} />
+                      <img src={materialUI} width={20} />
+                    </Stack>
+                  </CardActions>
+                </Card>
               </motion.div>
             </Grid>
 
@@ -149,15 +212,39 @@ export default function VerticalTabs() {
                   hidden: { opacity: 0, scale: 0 },
                 }}
               >
-                <img className={classes.projectFrame} src={vmxBG} />
-                <Box className={classes.projectTitle}>
-                  <img
-                    src={VMXLogo}
-                    style={{
-                      maxWidth: "35px",
-                    }}
-                  />
-                </Box>
+                <Card className={classes.projectFrame}>
+                  <Link
+                    href="https://vmxdev.securevws.com/admin/login"
+                    underline="none"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <CardActionArea>
+                      <CardMedia
+                        component="img"
+                        height="206"
+                        image={vmxBG}
+                        alt="VMX"
+                      />
+                      <Box className={classes.projectTitle}>
+                        <img
+                          src={VMXLogo}
+                          style={{
+                            maxWidth: "35px",
+                          }}
+                        />
+                      </Box>
+                    </CardActionArea>
+                  </Link>
+
+                  <CardActions sx={{ justifyContent: "center" }}>
+                    <Stack direction="row" spacing={4}>
+                      <img src={laravel} width={20} />
+                      <img src={reactjs} width={20} />
+                      <img src={materialUI} width={20} />
+                    </Stack>
+                  </CardActions>
+                </Card>
               </motion.div>
             </Grid>
           </Grid>

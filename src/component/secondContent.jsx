@@ -284,7 +284,7 @@ export default function ColorsTimeline() {
                 <TimelineConnector />
               </TimelineSeparator>
               <TimelineContent>
-                <Typography>JanuaryMarch 2020 — December 2021</Typography>
+                <Typography>March 2020 — December 2021</Typography>
 
                 <Typography component={"div"} variant={"caption"}>
                   Worked as a productive and positive team member to design,
