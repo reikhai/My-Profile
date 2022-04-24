@@ -1,18 +1,38 @@
 import { useState, useContext, useMemo, createContext } from "react";
-import ScrollTopButton from "./component/layouts/footer";
-import Main from "./routers/main";
-import SideBar from "./component/layouts/sideBar";
-import SocialSideBar from "./component/layouts/socialSideBar";
+import ScrollTopButton from "./footer";
+import Main from "../../routers/main";
+import SideBar from "./sideBar";
+import SocialSideBar from "./socialSideBar";
 import { useTheme, ThemeProvider, createTheme } from "@mui/material/styles";
-import { amber, grey, lightBlue } from "@mui/material/colors";
+import { deepPurple, grey } from "@mui/material/colors";
+import Button from "@mui/material/Button";
+import resume from "../../document/resume.pdf";
 
 const ColorModeContext = createContext({ toggleColorMode: () => {} });
 
 function MyApp() {
   const theme = useTheme();
   const colorMode = useContext(ColorModeContext);
+
+  const onResumeClick = () => {
+    window.open(resume);
+  };
+
   return (
     <>
+      <Button
+        onClick={onResumeClick}
+        variant="outlined"
+        style={{
+          position: "fixed",
+          zIndex: 9999999,
+          right: "0px",
+          margin: "15px",
+        }}
+      >
+        Resume
+      </Button>
+
       <Main />
       <SocialSideBar />
       <SideBar theme={theme} modeChange={colorMode.toggleColorMode} />
@@ -38,9 +58,9 @@ export default function MasterLayout() {
         palette: {
           mode,
           primary: {
-            ...amber,
+            ...deepPurple,
             ...(mode === "dark" && {
-              main: lightBlue[300],
+              main: deepPurple[300],
             }),
           },
           ...(mode === "dark" && {

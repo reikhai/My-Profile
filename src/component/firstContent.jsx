@@ -243,6 +243,12 @@ export default function FirstContent({ modeChange, theme }) {
                 ))}
               </div>
             </motion.div>
+            <motion.div className={classes.skillContent} variants={item}>
+              <div className="skills">
+                <label>Contact:</label>
+                ngreikhai2010@hotmail.com | 017-2817699
+              </div>
+            </motion.div>
           </motion.div>
 
           <motion.div

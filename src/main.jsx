@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 
-const MasterLayout = lazy(() => import("./master"));
+const MasterLayout = lazy(() => import("./component/layouts/master"));
 
 ReactDOM.render(
   <React.StrictMode>
