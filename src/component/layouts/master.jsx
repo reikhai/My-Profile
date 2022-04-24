@@ -7,6 +7,7 @@ import { useTheme, ThemeProvider, createTheme } from "@mui/material/styles";
 import { deepPurple, grey } from "@mui/material/colors";
 import Button from "@mui/material/Button";
 import resume from "../../document/resume.pdf";
+import { motion } from "framer-motion";
 
 const ColorModeContext = createContext({ toggleColorMode: () => {} });
 
@@ -20,18 +21,21 @@ function MyApp() {
 
   return (
     <>
-      <Button
-        onClick={onResumeClick}
-        variant="outlined"
-        style={{
+      <motion.div
+        whileHover={{
+          scale: 1.2,
+        }}
+        animate={{
           position: "fixed",
-          zIndex: 9999999,
+          zIndex: 10000,
           right: "0px",
           margin: "15px",
         }}
       >
-        Resume
-      </Button>
+        <Button onClick={onResumeClick} variant="outlined">
+          Resume
+        </Button>
+      </motion.div>
 
       <Main />
       <SocialSideBar />
