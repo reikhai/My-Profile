@@ -275,7 +275,21 @@ export default function ColorsTimeline() {
                 <TimelineDot color="secondary" />
                 <TimelineConnector />
               </TimelineSeparator>
-              <TimelineContent>January 2022 — Present</TimelineContent>
+              <TimelineContent>
+                <Typography>
+                  January 2022 — Present (Lockswitch Sdn Bhd - Front-End Web
+                  Developer)
+                </Typography>
+                <Typography component={"div"} variant={"caption"}>
+                  Enchance current CMS User Interface
+                </Typography>
+                <Typography component={"div"} variant={"caption"}>
+                  Resolved bugs
+                </Typography>
+                <Typography component={"div"} variant={"caption"}>
+                  Write test script (cypress)
+                </Typography>
+              </TimelineContent>
             </TimelineItem>
 
             <TimelineItem>
@@ -284,7 +298,10 @@ export default function ColorsTimeline() {
                 <TimelineConnector />
               </TimelineSeparator>
               <TimelineContent>
-                <Typography>March 2020 — December 2021</Typography>
+                <Typography>
+                  March 2020 — December 2021 (ISCity Sdn Bhd - Software
+                  Developer)
+                </Typography>
 
                 <Typography component={"div"} variant={"caption"}>
                   Worked as a productive and positive team member to design,
@@ -316,7 +333,10 @@ export default function ColorsTimeline() {
                 <TimelineConnector />
               </TimelineSeparator>
               <TimelineContent>
-                <Typography>January 2019 — March 2020</Typography>
+                <Typography>
+                  January 2019 — March 2020 (ISCity Sdn Bhd - Software
+                  Developer)
+                </Typography>
                 <Typography component={"div"} variant={"caption"}>
                   Build and enhance website
                 </Typography>
@@ -334,7 +354,10 @@ export default function ColorsTimeline() {
                 <TimelineDot color="success" />
               </TimelineSeparator>
               <TimelineContent>
-                <Typography>September 2018 — December 2018</Typography>
+                <Typography>
+                  September 2018 — December 2018 (ISCity Sdn Bhd - Software
+                  Developer)
+                </Typography>
 
                 <Typography component={"div"} variant={"caption"}>
                   Build and implement new web features
@@ -385,13 +408,13 @@ export default function ColorsTimeline() {
 //               January 2022 — Present
 //             </Typography>
 //             <br></br>
-//             <Typography component={"span"} variant={"caption"}>
-//               <ul>
-//                 <li>Enchance current CMS User Interface</li>
-//                 <li>Resolved bugs</li>
-//                 <li>Write test script (cypress)</li>
-//               </ul>
-//             </Typography>
+// <Typography component={"span"} variant={"caption"}>
+//   <ul>
+//     <li>Enchance current CMS User Interface</li>
+//     <li>Resolved bugs</li>
+//     <li>Write test script (cypress)</li>
+//   </ul>
+// </Typography>
 //           </TabPanel>
 
 //           <TabPanel value={value} index={1}>
