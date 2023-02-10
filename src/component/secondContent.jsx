@@ -203,6 +203,7 @@ export default function ColorsTimeline() {
               <li>Revamp CMS User Interface</li>
               <li>Bug fixed on current CMS site</li>
               <li>Write reusable components</li>
+              <li>Develop new features for admin panels</li>
             </Typography>
           </TabPanel>
 
@@ -309,7 +310,10 @@ export default function ColorsTimeline() {
                   Bug fixed on current CMS site
                 </Typography>
                 <Typography component={"div"} variant={"caption"}>
-                 Write reusable components
+                  Write reusable components
+                </Typography>
+                <Typography component={"div"} variant={"caption"}>
+                  Develop new features for admin panels
                 </Typography>
               </TimelineContent>
             </TimelineItem>
