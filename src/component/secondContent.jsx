@@ -299,7 +299,7 @@ export default function ColorsTimeline() {
           </Timeline>
         </Box>
 
-        <div className={classes.angleBottom}></div>
+        {/* <div className={classes.angleBottom}></div> */}
       </motion.div>
     </section>
   );
