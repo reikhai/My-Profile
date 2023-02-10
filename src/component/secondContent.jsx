@@ -63,6 +63,7 @@ const useStyles = makeStyles()((theme) => {
         position: "relative",
         zIndex: "1000",
         padding: "15px 30px",
+        height:'100vh',
       },
       [theme.breakpoints.up("sm")]: {
         display: "none",
@@ -160,6 +161,63 @@ export default function ColorsTimeline() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  const expData = [
+    {
+      company:'UP DEVLABS Pte Ltd (Full-time)',
+      workDuration: 'June 2022 — Present ',
+      role:'Front-end Software Developer',
+      exp:[
+          'Bug fixes and enhancement on current chat System',
+          'Revamp CMS User Interface','Bug fixed on current CMS site',
+          'Write reusable components',
+          'Develop new features for admin panels'
+          ],
+    },
+    {
+      company:'Lockswitch Sdn Bhd (Full-time)',
+      workDuration: 'January 2022 — May 2022',
+      role:'Front-end Software Developer',
+      exp:[
+          'Enchance current CMS User Interface',
+          'Resolved bugs',
+          'Write test script (cypress)'
+          ],
+    },
+    {
+      company:'ISCITY Sdn Bhd (Full-time)',
+      workDuration: 'March 2020 — December 2021',
+      role:'Software Developer',
+      exp:[
+          'Worked as a productive and positive team member to design,code, test and debug operations.',
+          'Managed front-end and back-end development in various project.',
+          'Successfully identified, diagnosed, and fixed website bugs.',
+          'Worked on E-commerce project with Laravel Framework (PHP) as back-end, JQuery and Bootstrap as front-end.',
+          'Developed standardized and maintainable code that able to use in various new project.',
+          'Develop CMS in react.js'
+          ],
+    },
+    {
+      company:'ISCITY Sdn Bhd (Part-time)',
+      workDuration: 'January 2019 — March 2020',
+      role:'Software Developer',
+      exp:[
+            'Build and enhance website',
+            'Enhance Product Management in Admin n Merchant Site',
+            'Social login integration',
+          ],
+    },
+    {
+      company:'ISCITY Sdn Bhd (Internship)',
+      workDuration: 'September 2018 — December 2018',
+      role:'Software Developer',
+      exp:[
+        'Build and implement new web features',
+        'Help enhance website look awesome',
+        'Solve website bugs',
+        'Understand Laravel framework structure'
+      ],
+    },
+  ]
 
   return (
     <section>
@@ -183,245 +241,61 @@ export default function ColorsTimeline() {
             variant="scrollable"
             scrollButtons="auto"
           >
-            <Tab label="UP DEVLABS Pte Ltd" {...a11yProps(0)} />
-            <Tab label="Lockswitch" {...a11yProps(1)} />
-            <Tab label="ISCITY (Full Time)" {...a11yProps(2)} />
-            <Tab label="ISCITY (Part Time)" {...a11yProps(3)} />
-            <Tab label="ISCITY (Internship)" {...a11yProps(4)} />
+            {expData.map((item,index) => {
+               return (
+                <Tab key={index} label={item.company} {...a11yProps(index)} />
+              );
+            })}
           </Tabs>
-          <TabPanel value={value} index={0}>
-            <Typography component={"span"} variant={"body2"}>
-              Front-End Web Developer
-            </Typography>
-            <br></br>
-            <Typography component={"span"} variant={"caption"}>
-              June 2022 — Present
-            </Typography>
-            <br></br>
-            <Typography component={"span"} variant={"caption"}>
-              <li>Bug fixes and enhancement on current chat System</li>
-              <li>Revamp CMS User Interface</li>
-              <li>Bug fixed on current CMS site</li>
-              <li>Write reusable components</li>
-              <li>Develop new features for admin panels</li>
-            </Typography>
-          </TabPanel>
+          {expData.map((item,index) => {
+              return (
+              <TabPanel key={index} value={value} index={index}>
+                <Typography component={"span"} variant={"body2"}>
+                  {item.role}
+                </Typography>
+                <br></br>
+                <Typography component={"span"} variant={"caption"}>
+                  {item.workDuration}
+                </Typography>
+                <br></br>
+                <Typography component={"span"} variant={"caption"}>
+                  {item.exp.map((v,i) => {
+                    return (
+                      <li key={i}>{v}</li>
+                    )
+                  })}
+                </Typography>
+              </TabPanel>
+            );
+          })}
 
-          <TabPanel value={value} index={1}>
-            <Typography component={"span"} variant={"body2"}>
-              Front-End Web Developer
-            </Typography>
-            <br></br>
-            <Typography component={"span"} variant={"caption"}>
-              January 2022 — May 2022
-            </Typography>
-            <br></br>
-            <Typography component={"span"} variant={"caption"}>
-              <li>Enchance current CMS User Interface</li>
-              <li>Resolved bugs</li>
-              <li>Write test script (cypress)</li>
-            </Typography>
-          </TabPanel>
-
-          <TabPanel value={value} index={2}>
-            <Typography component={"span"} variant={"body2"}>
-              Software Developer
-            </Typography>
-            <br></br>
-            <Typography component={"span"} variant={"caption"}>
-              March 2020 — December 2021
-            </Typography>
-            <Typography component={"span"} variant={"caption"}>
-              <li>
-                Worked as a productive and positive team member to design, code,
-                test and debug operations.
-              </li>
-              <li>
-                Managed front-end and back-end development in various project.
-              </li>
-              <li>
-                Successfully identified, diagnosed, and fixed website bugs.
-              </li>
-              <li>
-                Worked on E-commerce project with Laravel Framework (PHP) as
-                back-end, JQuery and Bootstrap as front-end.
-              </li>
-              <li>
-                Developed standardized and maintainable code that able to use in
-                various new project.
-              </li>
-              <li>Develop CMS in react.js</li>
-            </Typography>
-          </TabPanel>
-
-          <TabPanel value={value} index={3}>
-            <Typography component={"span"} variant={"body2"}>
-              Software Developer
-            </Typography>
-            <br></br>
-            <Typography component={"span"} variant={"caption"}>
-              January 2019 — March 2020
-            </Typography>
-            <Typography component={"span"} variant={"caption"}>
-              <li>Build and enhance website</li>
-              <li>Enhance Product Management in Admin n Merchant Site</li>
-              <li>Social login integration</li>
-            </Typography>
-          </TabPanel>
-
-          <TabPanel value={value} index={4}>
-            <Typography component={"span"} variant={"body2"}>
-              Software Developer
-            </Typography>
-            <br></br>
-            <Typography component={"span"} variant={"caption"}>
-              September 2018 — December 2018
-            </Typography>
-
-            <Typography component={"span"} variant={"caption"}>
-              <li>Build and implement new web features</li>
-              <li>Help enhance website look awesome</li>
-              <li>Solve website bugs</li>
-              <li>Understand Laravel framework structure</li>
-            </Typography>
-          </TabPanel>
         </Box>
 
         <Box className={classes.webView}>
           <Timeline position="alternate">
+            {expData.map((item,index) => {
+               return (
+                <TimelineItem key={index}>
+                  <TimelineSeparator>
+                    <TimelineDot color={index === 0 ? 'secondary' : 'success'} />
+                    <TimelineConnector />
+                  </TimelineSeparator>
 
-            <TimelineItem>
-              <TimelineSeparator>
-                <TimelineDot color="secondary" />
-                <TimelineConnector />
-              </TimelineSeparator>
-              <TimelineContent>
-                <Typography>
-                  June 2022 — Present (UP DEVLABS Pte Ltd - Front-End Web
-                  Developer)
-                </Typography>
-                <Typography component={"div"} variant={"caption"}>
-                  Bug fixes and enhancement on current chat System
-                </Typography>
-                <Typography component={"div"} variant={"caption"}>
-                  Revamp CMS User Interface
-                </Typography>
-                <Typography component={"div"} variant={"caption"}>
-                  Bug fixed on current CMS site
-                </Typography>
-                <Typography component={"div"} variant={"caption"}>
-                  Write reusable components
-                </Typography>
-                <Typography component={"div"} variant={"caption"}>
-                  Develop new features for admin panels
-                </Typography>
-              </TimelineContent>
-            </TimelineItem>
-
-            <TimelineItem>
-              <TimelineSeparator>
-                <TimelineDot color="success" />
-                <TimelineConnector />
-              </TimelineSeparator>
-              <TimelineContent>
-                <Typography>
-                  January 2022 — May 2022 (Lockswitch Sdn Bhd - Front-End Web
-                  Developer)
-                </Typography>
-                <Typography component={"div"} variant={"caption"}>
-                  Enchance current CMS User Interface
-                </Typography>
-                <Typography component={"div"} variant={"caption"}>
-                  Resolved bugs
-                </Typography>
-                <Typography component={"div"} variant={"caption"}>
-                  Write test script (cypress)
-                </Typography>
-              </TimelineContent>
-            </TimelineItem>
-
-            <TimelineItem>
-              <TimelineSeparator>
-                <TimelineDot color="success" />
-                <TimelineConnector />
-              </TimelineSeparator>
-              <TimelineContent>
-                <Typography>
-                  March 2020 — December 2021 (ISCity Sdn Bhd - Software
-                  Developer)
-                </Typography>
-
-                <Typography component={"div"} variant={"caption"}>
-                  Worked as a productive and positive team member to design,
-                  code, test and debug operations.
-                </Typography>
-                <Typography component={"div"} variant={"caption"}>
-                  Managed front-end and back-end development in various project.
-                </Typography>
-                <Typography component={"div"} variant={"caption"}>
-                  Successfully identified, diagnosed, and fixed website bugs.
-                </Typography>
-                <Typography component={"div"} variant={"caption"}>
-                  Worked on E-commerce project with Laravel Framework (PHP) as
-                  back-end, JQuery and Bootstrap as front-end.
-                </Typography>
-                <Typography component={"div"} variant={"caption"}>
-                  Developed standardized and maintainable code that able to use
-                  in various new project.
-                </Typography>
-                <Typography component={"div"} variant={"caption"}>
-                  Develop CMS in react.js
-                </Typography>
-              </TimelineContent>
-            </TimelineItem>
-
-            <TimelineItem>
-              <TimelineSeparator>
-                <TimelineDot color="success" />
-                <TimelineConnector />
-              </TimelineSeparator>
-              <TimelineContent>
-                <Typography>
-                  January 2019 — March 2020 (ISCity Sdn Bhd - Software
-                  Developer)
-                </Typography>
-                <Typography component={"div"} variant={"caption"}>
-                  Build and enhance website
-                </Typography>
-                <Typography component={"div"} variant={"caption"}>
-                  Enhance Product Management in Admin n Merchant Site
-                </Typography>
-                <Typography component={"div"} variant={"caption"}>
-                  Social login integration
-                </Typography>
-              </TimelineContent>
-            </TimelineItem>
-
-            <TimelineItem>
-              <TimelineSeparator>
-                <TimelineDot color="success" />
-              </TimelineSeparator>
-              <TimelineContent>
-                <Typography>
-                  September 2018 — December 2018 (ISCity Sdn Bhd - Software
-                  Developer)
-                </Typography>
-
-                <Typography component={"div"} variant={"caption"}>
-                  Build and implement new web features
-                </Typography>
-
-                <Typography component={"div"} variant={"caption"}>
-                  Help enhance website look awesome
-                </Typography>
-                <Typography component={"div"} variant={"caption"}>
-                  Solve website bugs
-                </Typography>
-                <Typography component={"div"} variant={"caption"}>
-                  Understand Laravel framework structure
-                </Typography>
-              </TimelineContent>
-            </TimelineItem>
+                  <TimelineContent>
+                    <Typography>
+                      {item.workDuration} ({item.company} - {item.role})
+                    </Typography>
+                    {item.exp.map((v,i) => {
+                      return (
+                        <Typography component={"div"} variant={"caption"} key={i}>
+                          {v}
+                        </Typography>
+                      )
+                    })}
+                  </TimelineContent>
+                </TimelineItem>
+              );
+            })}
           </Timeline>
         </Box>
 
@@ -430,109 +304,3 @@ export default function ColorsTimeline() {
     </section>
   );
 }
-
-// <section>
-//   <div className={classes.secondContent}>
-//         <Box className={classes.webView}>
-//           <Tabs
-//             orientation="vertical"
-//             variant="scrollable"
-//             value={value}
-//             onChange={handleChange}
-//             aria-label="Vertical tabs example"
-//             sx={{ borderRight: 1, borderColor: "divider" }}
-//           >
-//             <Tab label="Lockswitch" {...a11yProps(0)} />
-//             <Tab label="ISCITY (Full Time)" {...a11yProps(1)} />
-//             <Tab label="ISCITY (Part Time)" {...a11yProps(2)} />
-//             <Tab label="ISCITY (Internship)" {...a11yProps(3)} />
-//           </Tabs>
-//           <TabPanel value={value} index={0}>
-//             <Typography component={"span"} variant={"body2"}>
-//               Front-End Web Developer
-//             </Typography>
-//             <br></br>
-//             <Typography component={"span"} variant={"caption"}>
-//               January 2022 — Present
-//             </Typography>
-//             <br></br>
-// <Typography component={"span"} variant={"caption"}>
-//   <ul>
-//     <li>Enchance current CMS User Interface</li>
-//     <li>Resolved bugs</li>
-//     <li>Write test script (cypress)</li>
-//   </ul>
-// </Typography>
-//           </TabPanel>
-
-//           <TabPanel value={value} index={1}>
-//             <Typography component={"span"} variant={"body2"}>
-//               Software Developer
-//             </Typography>
-//             <br></br>
-//             <Typography component={"span"} variant={"caption"}>
-//               March 2020 — December 2021
-//             </Typography>
-//             <Typography component={"span"} variant={"caption"}>
-//               <ul>
-//                 <li>
-//                   Worked as a productive and positive team member to design,
-//                   code, test and debug operations.
-//                 </li>
-//                 <li>
-//                   Managed front-end and back-end development in various project.
-//                 </li>
-//                 <li>
-//                   Successfully identified, diagnosed, and fixed website bugs.
-//                 </li>
-//                 <li>
-//                   Worked on E-commerce project with Laravel Framework (PHP) as
-//                   back-end, JQuery and Bootstrap as front-end.
-//                 </li>
-//                 <li>
-//                   Developed standardized and maintainable code that able to use
-//                   in various new project.
-//                 </li>
-//                 <li>Develop CMS in react.js</li>
-//                 <li>Revamp old CMS in react.js</li>
-//               </ul>
-//             </Typography>
-//           </TabPanel>
-
-//           <TabPanel value={value} index={2}>
-//             <Typography component={"span"} variant={"body2"}>
-//               Software Developer
-//             </Typography>
-//             <br></br>
-//             <Typography component={"span"} variant={"caption"}>
-//               January 2019 — March 2020
-//             </Typography>
-//             <Typography component={"span"} variant={"caption"}>
-//               <ul>
-//                 <li>Build and enhance website</li>
-//                 <li>Enhance Product Management in Admin n Merchant Site</li>
-//                 <li>Social login integration</li>
-//               </ul>
-//             </Typography>
-//           </TabPanel>
-
-//           <TabPanel value={value} index={3}>
-//             <Typography component={"span"} variant={"body2"}>
-//               Software Developer
-//             </Typography>
-//             <br></br>
-//             <Typography component={"span"} variant={"caption"}>
-//               September 2018 — December 2018
-//             </Typography>
-//             <Typography component={"span"} variant={"caption"}>
-//               <ul>
-//                 <li>Build and implement new web features</li>
-//                 <li>Help enhance website look awesome</li>
-//                 <li>Solve website bugs</li>
-//                 <li>Understand Laravel framework structure</li>
-//               </ul>
-//             </Typography>
-//           </TabPanel>
-//         </Box>
-//       </div>
-//     </section>
