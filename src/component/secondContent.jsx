@@ -199,7 +199,7 @@ export default function ColorsTimeline() {
             </Typography>
             <br></br>
             <Typography component={"span"} variant={"caption"}>
-              <li>Write reusable components</li>
+              <li>Bug fixes and enhancement on current chat System</li>
               <li>Revamp CMS User Interface</li>
               <li>Bug fixed on current CMS site</li>
               <li>Write reusable components</li>
@@ -301,7 +301,7 @@ export default function ColorsTimeline() {
                   Developer)
                 </Typography>
                 <Typography component={"div"} variant={"caption"}>
-                  Write reusable components
+                  Bug fixes and enhancement on current chat System
                 </Typography>
                 <Typography component={"div"} variant={"caption"}>
                   Revamp CMS User Interface
