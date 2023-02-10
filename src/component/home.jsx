@@ -35,7 +35,7 @@ export default function Home() {
       <div className={classes.root}>
         <FirstContent theme={theme} />
         <SecondContent theme={theme} />
-        <ThirdContent theme={theme} />
+        {/* <ThirdContent theme={theme} /> */}
       </div>
     </>
   );

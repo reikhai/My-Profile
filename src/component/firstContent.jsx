@@ -9,12 +9,15 @@ import reactjs from "../images/icons8-react.svg";
 import laravel from "../images/laravel-2.svg";
 import bootstrap from "../images/bootstrap-4.svg";
 import materialUI from "../images/material-ui-1.svg";
-import khai from "../images/khai.jpg";
+import khai from "../images/khai2.jpg";
+import malaysia from "../images/malaysia.svg";
+import singapore from "../images/singapore.svg";
+
 import { motion } from "framer-motion";
 
 const useStyles = makeStyles()((theme) => {
   const bgColor = theme.palette.background.default;
-
+  
   return {
     reduceGap: {
       justifyContent: "flex-end",
@@ -99,6 +102,15 @@ const useStyles = makeStyles()((theme) => {
           margin: "10px 20px 10px 0px",
           maxWidth: "80px",
         },
+      },
+    },
+
+    alignCenter:{
+      display: "inline-flex",
+      justifyContent: 'center',
+      alignItems: 'center',
+      "& img": {
+        margin: '10px',
       },
     },
 
@@ -245,10 +257,31 @@ export default function FirstContent({ modeChange, theme }) {
             </motion.div>
             <motion.div className={classes.skillContent} variants={item}>
               <div className="skills">
-                <label>Contact:</label>
-                ngreikhai2010@hotmail.com | 017-2817699
+                <label>Email:</label>
+                <div>
+                  <div>ngreikhai2010@hotmail.com </div>
+                </div>
               </div>
             </motion.div>
+
+            <motion.div className={classes.skillContent} variants={item}>
+              <div className="skills">
+                <label>Contact:</label>
+                <div>
+                  <div className={classes.alignCenter}>
+                    <img src={malaysia} width="20" sx={{
+                      margin: "10px",
+                    }}/>
+                    <span>+6011-39228171</span> 
+                  </div>
+                  <div className={classes.alignCenter}>
+                    <img src={singapore} width="20"/>
+                    <span>+6580447181</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
           </motion.div>
 
           <motion.div

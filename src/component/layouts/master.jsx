@@ -1,4 +1,4 @@
-import { useState, useContext, useMemo, createContext } from "react";
+import { useState, useContext, useMemo, createContext,useEffect } from "react";
 import ScrollTopButton from "./footer";
 import Main from "../../routers/main";
 import SideBar from "./sideBar";
@@ -18,7 +18,7 @@ function MyApp() {
   const onResumeClick = () => {
     window.open(resume);
   };
-
+  
   return (
     <>
       <motion.div
@@ -47,6 +47,9 @@ function MyApp() {
 
 export default function MasterLayout() {
   const [mode, setMode] = useState("light");
+  const hours = new Date().getHours()
+  const isDayTime = hours > 6 && hours < 20
+
   const colorMode = useMemo(
     () => ({
       toggleColorMode: () => {
@@ -88,6 +91,15 @@ export default function MasterLayout() {
       }),
     [mode]
   );
+
+  useEffect(() => {
+    if(isDayTime === true){
+      setMode('light')
+    } else {
+      setMode('dark')
+    }
+  },[]);
+
 
   return (
     <>

@@ -183,10 +183,11 @@ export default function ColorsTimeline() {
             variant="scrollable"
             scrollButtons="auto"
           >
-            <Tab label="Lockswitch" {...a11yProps(0)} />
-            <Tab label="ISCITY (Full Time)" {...a11yProps(1)} />
-            <Tab label="ISCITY (Part Time)" {...a11yProps(2)} />
-            <Tab label="ISCITY (Internship)" {...a11yProps(3)} />
+            <Tab label="UP DEVLABS Pte Ltd" {...a11yProps(0)} />
+            <Tab label="Lockswitch" {...a11yProps(1)} />
+            <Tab label="ISCITY (Full Time)" {...a11yProps(2)} />
+            <Tab label="ISCITY (Part Time)" {...a11yProps(3)} />
+            <Tab label="ISCITY (Internship)" {...a11yProps(4)} />
           </Tabs>
           <TabPanel value={value} index={0}>
             <Typography component={"span"} variant={"body2"}>
@@ -194,7 +195,24 @@ export default function ColorsTimeline() {
             </Typography>
             <br></br>
             <Typography component={"span"} variant={"caption"}>
-              January 2022 — Present
+              June 2022 — Present
+            </Typography>
+            <br></br>
+            <Typography component={"span"} variant={"caption"}>
+              <li>Write reusable components</li>
+              <li>Revamp CMS User Interface</li>
+              <li>Bug fixed on current CMS site</li>
+              <li>Write reusable components</li>
+            </Typography>
+          </TabPanel>
+
+          <TabPanel value={value} index={1}>
+            <Typography component={"span"} variant={"body2"}>
+              Front-End Web Developer
+            </Typography>
+            <br></br>
+            <Typography component={"span"} variant={"caption"}>
+              January 2022 — May 2022
             </Typography>
             <br></br>
             <Typography component={"span"} variant={"caption"}>
@@ -204,7 +222,7 @@ export default function ColorsTimeline() {
             </Typography>
           </TabPanel>
 
-          <TabPanel value={value} index={1}>
+          <TabPanel value={value} index={2}>
             <Typography component={"span"} variant={"body2"}>
               Software Developer
             </Typography>
@@ -235,7 +253,7 @@ export default function ColorsTimeline() {
             </Typography>
           </TabPanel>
 
-          <TabPanel value={value} index={2}>
+          <TabPanel value={value} index={3}>
             <Typography component={"span"} variant={"body2"}>
               Software Developer
             </Typography>
@@ -250,7 +268,7 @@ export default function ColorsTimeline() {
             </Typography>
           </TabPanel>
 
-          <TabPanel value={value} index={3}>
+          <TabPanel value={value} index={4}>
             <Typography component={"span"} variant={"body2"}>
               Software Developer
             </Typography>
@@ -270,6 +288,7 @@ export default function ColorsTimeline() {
 
         <Box className={classes.webView}>
           <Timeline position="alternate">
+
             <TimelineItem>
               <TimelineSeparator>
                 <TimelineDot color="secondary" />
@@ -277,7 +296,32 @@ export default function ColorsTimeline() {
               </TimelineSeparator>
               <TimelineContent>
                 <Typography>
-                  January 2022 — Present (Lockswitch Sdn Bhd - Front-End Web
+                  June 2022 — Present (UP DEVLABS Pte Ltd - Front-End Web
+                  Developer)
+                </Typography>
+                <Typography component={"div"} variant={"caption"}>
+                  Write reusable components
+                </Typography>
+                <Typography component={"div"} variant={"caption"}>
+                  Revamp CMS User Interface
+                </Typography>
+                <Typography component={"div"} variant={"caption"}>
+                  Bug fixed on current CMS site
+                </Typography>
+                <Typography component={"div"} variant={"caption"}>
+                 Write reusable components
+                </Typography>
+              </TimelineContent>
+            </TimelineItem>
+
+            <TimelineItem>
+              <TimelineSeparator>
+                <TimelineDot color="success" />
+                <TimelineConnector />
+              </TimelineSeparator>
+              <TimelineContent>
+                <Typography>
+                  January 2022 — May 2022 (Lockswitch Sdn Bhd - Front-End Web
                   Developer)
                 </Typography>
                 <Typography component={"div"} variant={"caption"}>
