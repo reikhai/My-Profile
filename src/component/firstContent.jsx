@@ -234,8 +234,7 @@ export default function FirstContent({ modeChange, theme }) {
             </motion.h4>
 
             <motion.p variants={item}>
-              A web developer from Selangor, Malaysia. I'm an experienced
-              Front-End Developer with a demonstrated history of working in the
+              I'm an experienced Front-End Developer with a demonstrated history of working in the
               information technology and services industry. I like to code
               things from scratch, and enjoy bringing ideas to life in the
               browser.
