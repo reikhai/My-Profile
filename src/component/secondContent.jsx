@@ -170,7 +170,7 @@ export default function ColorsTimeline() {
           'Bug fixes and enhancement on current chat System',
           'Revamp CMS User Interface','Bug fixed on current CMS site',
           'Write reusable components',
-          'Develop new features for admin panels'
+          'Identify web issues and develop new features for admin panels',
           ],
     },
     {
