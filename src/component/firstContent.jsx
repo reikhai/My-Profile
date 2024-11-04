@@ -230,7 +230,7 @@ export default function FirstContent({ modeChange, theme }) {
             <motion.h2 variants={item}>Hi, I'm Rei Khai</motion.h2>
 
             <motion.h4 variants={item}>
-              Front-End Developer | 3 years Eperiences123
+              Front-End Developer | 5 years Eperiences
             </motion.h4>
 
             <motion.p variants={item}>
