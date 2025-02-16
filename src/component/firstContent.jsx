@@ -234,10 +234,7 @@ export default function FirstContent({ modeChange, theme }) {
             </motion.h4>
 
             <motion.p variants={item}>
-              I'm an experienced Front-End Developer with a demonstrated history of working in the
-              information technology and services industry. I like to code
-              things from scratch, and enjoy bringing ideas to life in the
-              browser.
+            Experienced Front-End Developer with 5 years of hands-on experience in the information technology and services industry. Proficient in building modern, dynamic web applications using ReactJS, VueJS, and Laravel. Skilled at coding from scratch and developing seamless, user-centric interfaces that provide exceptional user experiences. Passionate about turning creative ideas into fully functional, high-performance solutions. With a strong foundation in both front-end and back-end technologies, I thrive in fast-paced environments, delivering scalable and efficient applications that meet complex requirements.
             </motion.p>
 
             <motion.div className={classes.skillContent} variants={item}>
