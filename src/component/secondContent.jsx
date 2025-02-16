@@ -167,10 +167,10 @@ export default function ColorsTimeline() {
       workDuration: 'June 2022 — Present ',
       role:'Front-end Software Developer',
       exp:[
-          'Bug fixes and enhancement on current chat System',
-          'Revamp CMS User Interface','Bug fixed on current CMS site',
-          'Write reusable components',
-          'Identify web issues and develop new features for admin panels',
+          'Translated UX and business requirements into elegant code solutions.',
+          'Optimizes website load times by utilizing efficient front-end technologies and caching techniques.',
+          'Developed reusable components, enhancing code efficiency and reducing development time across multiple projects',
+          'Collaborated with web designers, back end developers, and business analysts to successfully achieve project goals,enhancing team productivity and project outcomes.',
           ],
     },
     {
@@ -178,9 +178,9 @@ export default function ColorsTimeline() {
       workDuration: 'January 2022 — May 2022',
       role:'Front-end Software Developer',
       exp:[
-          'Enchance current CMS User Interface',
-          'Resolved bugs',
-          'Write test script (cypress)'
+          'Enhanced the user interface of the current CMS website, resulting in improved user engagement and satisfaction',
+          'Developed a test script using Cypress to enhance system reliability and ensure comprehensive testing coverage.',
+          'Standardized component'
           ],
     },
     {
