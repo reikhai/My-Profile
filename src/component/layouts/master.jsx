@@ -4,7 +4,7 @@ import Main from "../../routers/main";
 import SideBar from "./sideBar";
 import SocialSideBar from "./socialSideBar";
 import { useTheme, ThemeProvider, createTheme } from "@mui/material/styles";
-import { deepPurple, grey } from "@mui/material/colors";
+import { lightBlue, grey } from "@mui/material/colors";
 import Button from "@mui/material/Button";
 import resume from "../../document/resume.pdf";
 import { motion } from "framer-motion";
@@ -32,7 +32,7 @@ function MyApp() {
           margin: "15px",
         }}
       >
-        <Button onClick={onResumeClick} variant="outlined">
+        <Button onClick={onResumeClick} variant="contained">
           Resume
         </Button>
       </motion.div>
@@ -65,9 +65,9 @@ export default function MasterLayout() {
         palette: {
           mode,
           primary: {
-            ...deepPurple,
+            ...lightBlue,
             ...(mode === "dark" && {
-              main: deepPurple[300],
+              main: lightBlue[300],
             }),
           },
           ...(mode === "dark" && {

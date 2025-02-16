@@ -34,7 +34,7 @@ const useStyles = makeStyles()((theme) => {
       position: "relative",
       zIndex: "1000",
       padding: "15px 30px",
-      background: `linear-gradient(147deg, #000000 0%, ${bgColor} 74%)`,
+      background: `linear-gradient(-45deg, #000000 0%, ${bgColor} 74%)`,
     },
 
     fontStyle: {

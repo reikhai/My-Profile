@@ -24,6 +24,7 @@ import foodbankLogo from "../images/food-bank-logo.png";
 import srBG from "../images/sr-bg.png";
 import srLogo from "../images/sr-logo.png";
 import { motion } from "framer-motion";
+import Typography from "@mui/material/Typography";
 
 const useStyles = makeStyles()((theme) => {
   const customeColor = theme.palette.primary.main;
@@ -152,7 +153,7 @@ export default function VerticalTabs() {
               </motion.div>
             </Grid>
 
-            <Grid item xs={6} sm={4} md={4}>
+            {/* <Grid item xs={6} sm={4} md={4}>
               <motion.div
                 className={classes.projectThumbnail}
                 initial="hidden"
@@ -198,7 +199,7 @@ export default function VerticalTabs() {
                   </CardActions>
                 </Card>
               </motion.div>
-            </Grid>
+            </Grid> */}
 
             <Grid item xs={6} sm={4} md={4}>
               <motion.div
@@ -214,7 +215,7 @@ export default function VerticalTabs() {
               >
                 <Card className={classes.projectFrame}>
                   <Link
-                    href="https://vmxdev.securevws.com/admin/login"
+                    href="https://dessert-demo.netlify.app/"
                     underline="none"
                     target="_blank"
                     rel="noreferrer"
@@ -224,22 +225,24 @@ export default function VerticalTabs() {
                         component="img"
                         height="206"
                         image={vmxBG}
-                        alt="VMX"
+                        alt="Demo"
                       />
                       <Box className={classes.projectTitle}>
-                        <img
+                        {/* <img
                           src={VMXLogo}
                           style={{
                             maxWidth: "35px",
                           }}
-                        />
+                        /> */}
+                        <Typography component={"span"} variant={"h4"}>
+                          Portfolio
+                        </Typography>
                       </Box>
                     </CardActionArea>
                   </Link>
 
                   <CardActions sx={{ justifyContent: "center" }}>
                     <Stack direction="row" spacing={4}>
-                      <img src={laravel} width={20} />
                       <img src={reactjs} width={20} />
                       <img src={materialUI} width={20} />
                     </Stack>
