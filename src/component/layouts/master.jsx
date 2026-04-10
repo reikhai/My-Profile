@@ -4,7 +4,6 @@ import Main from "../../routers/main";
 import SideBar from "./sideBar";
 import SocialSideBar from "./socialSideBar";
 import { useTheme, ThemeProvider, createTheme } from "@mui/material/styles";
-import { lightBlue, grey } from "@mui/material/colors";
 import Button from "@mui/material/Button";
 import resume from "../../document/resume.pdf";
 import { motion } from "framer-motion";
@@ -65,27 +64,40 @@ export default function MasterLayout() {
         palette: {
           mode,
           primary: {
-            ...lightBlue,
-            ...(mode === "dark" && {
-              main: lightBlue[300],
-            }),
+            main: mode === "light" ? "#2563eb" : "#60a5fa",
+            light: mode === "light" ? "#3b82f6" : "#93c5fd",
+            dark: mode === "light" ? "#1d4ed8" : "#3b82f6",
+            contrastText: "#ffffff",
           },
-          ...(mode === "dark" && {
-            background: {
-              default: "#434343",
-              paper: "#434343",
-            },
-          }),
+          secondary: {
+            main: mode === "light" ? "#64748b" : "#94a3b8",
+            light: mode === "light" ? "#94a3b8" : "#cbd5e1",
+            dark: mode === "light" ? "#475569" : "#64748b",
+          },
+          background: {
+            default: mode === "light" ? "#f4f6f9" : "#12151a",
+            paper: mode === "light" ? "#ffffff" : "#1a1f27",
+          },
+          divider:
+            mode === "light"
+              ? "rgba(15, 23, 42, 0.08)"
+              : "rgba(148, 163, 184, 0.14)",
           text: {
-            ...(mode === "light"
-              ? {
-                  primary: grey[900],
-                  secondary: grey[800],
-                }
-              : {
-                  primary: "#fff",
-                  secondary: grey[500],
-                }),
+            primary: mode === "light" ? "#0f172a" : "#e8eef4",
+            secondary: mode === "light" ? "#475569" : "#94a3b8",
+          },
+        },
+        shape: { borderRadius: 10 },
+        components: {
+          MuiButton: {
+            styleOverrides: {
+              root: {
+                textTransform: "none",
+                borderRadius: 8,
+                boxShadow: "none",
+                "&:hover": { boxShadow: "none" },
+              },
+            },
           },
         },
       }),

@@ -1,6 +1,5 @@
 import React from "react";
-import { lightBlue } from "@mui/material/colors";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import { Zoom, Box, Fab } from "@mui/material";
 import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";

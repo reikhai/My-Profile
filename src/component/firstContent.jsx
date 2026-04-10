@@ -1,23 +1,25 @@
 import React from "react";
 import { makeStyles } from "tss-react/mui";
+import { alpha } from "@mui/material/styles";
 import { Box } from "@mui/material";
-import html from "../images/icons8-html-5.svg";
-import css from "../images/icons8-css3.svg";
+import flutter from "../images/flutter.svg";
 import js from "../images/icons8-javascript.svg";
 import vuejs from "../images/icons8-vue-js.svg";
 import reactjs from "../images/icons8-react.svg";
 import laravel from "../images/laravel-2.svg";
 import bootstrap from "../images/bootstrap-4.svg";
-import materialUI from "../images/material-ui-1.svg";
-import khai from "../images/khai2.jpg";
-import malaysia from "../images/malaysia.svg";
+import khai from "../images/khai2.jpeg";
 import singapore from "../images/singapore.svg";
 
 import { motion } from "framer-motion";
 
 const useStyles = makeStyles()((theme) => {
   const bgColor = theme.palette.background.default;
-  
+  const heroGradient =
+    theme.palette.mode === "light"
+      ? `linear-gradient(-45deg, ${alpha("#0f172a", 0.06)} 0%, ${bgColor} 74%)`
+      : `linear-gradient(-45deg, #0a0d12 0%, ${bgColor} 74%)`;
+
   return {
     reduceGap: {
       justifyContent: "flex-end",
@@ -34,7 +36,7 @@ const useStyles = makeStyles()((theme) => {
       position: "relative",
       zIndex: "1000",
       padding: "15px 30px",
-      background: `linear-gradient(-45deg, #000000 0%, ${bgColor} 74%)`,
+      background: heroGradient,
     },
 
     fontStyle: {
@@ -105,12 +107,12 @@ const useStyles = makeStyles()((theme) => {
       },
     },
 
-    alignCenter:{
+    alignCenter: {
       display: "inline-flex",
-      justifyContent: 'center',
-      alignItems: 'center',
+      justifyContent: "center",
+      alignItems: "center",
       "& img": {
-        margin: '10px',
+        margin: "10px",
       },
     },
 
@@ -178,16 +180,7 @@ const useStyles = makeStyles()((theme) => {
 
 export default function FirstContent({ modeChange, theme }) {
   const { classes } = useStyles();
-  const skills = [
-    html,
-    css,
-    js,
-    vuejs,
-    reactjs,
-    laravel,
-    bootstrap,
-    materialUI,
-  ];
+  const skills = [flutter, vuejs, js, laravel, reactjs, bootstrap];
 
   const list = {
     visible: {
@@ -227,14 +220,20 @@ export default function FirstContent({ modeChange, theme }) {
             animate="visible"
             variants={list}
           >
-            <motion.h2 variants={item}>Hi, I'm Rei Khai</motion.h2>
+            <motion.h2 variants={item}>Hi, I'm Ng Rei Khai</motion.h2>
 
             <motion.h4 variants={item}>
-              Front-End Developer | 5 years Eperiences
+              Frontend Engineer | Web Developer · 5 years experience
             </motion.h4>
 
             <motion.p variants={item}>
-            Experienced Front-End Developer with 5 years of hands-on experience in the information technology and services industry. Proficient in building modern, dynamic web applications using ReactJS, VueJS, and Laravel. Skilled at coding from scratch and developing seamless, user-centric interfaces that provide exceptional user experiences. Passionate about turning creative ideas into fully functional, high-performance solutions. With a strong foundation in both front-end and back-end technologies, I thrive in fast-paced environments, delivering scalable and efficient applications that meet complex requirements.
+              Front-end developer with five years of hands-on experience in IT
+              and services. I specialize in building dynamic, high-performance
+              web and mobile applications using Vue.js, Laravel, and Flutter. I
+              translate UX and business needs into maintainable code, optimize
+              load times with solid front-end practices and caching, and enjoy
+              collaborating across design, backend, and product to ship great
+              outcomes.
             </motion.p>
 
             <motion.div className={classes.skillContent} variants={item}>
@@ -265,19 +264,12 @@ export default function FirstContent({ modeChange, theme }) {
                 <label>Contact:</label>
                 <div>
                   <div className={classes.alignCenter}>
-                    <img src={malaysia} width="20" sx={{
-                      margin: "10px",
-                    }}/>
-                    <span>+6011-39228171</span> 
-                  </div>
-                  <div className={classes.alignCenter}>
-                    <img src={singapore} width="20"/>
-                    <span>+6580447181</span>
+                    <img src={singapore} width="20" alt="" />
+                    <span>+65 8044 7181</span>
                   </div>
                 </div>
               </div>
             </motion.div>
-
           </motion.div>
 
           <motion.div

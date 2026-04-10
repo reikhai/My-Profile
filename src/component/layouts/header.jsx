@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "tss-react/mui";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { alpha, ThemeProvider } from "@mui/material/styles";
 import { Container, Grid } from "@mui/material";
 
 // const theme = createTheme({
@@ -25,7 +25,10 @@ const useStyles = makeStyles()((theme) => {
       margin: "0",
       zIndex: "99",
       position: "absolute",
-      background: "linear-gradient(147deg, #000000 0%, #434343 74%)",
+      background:
+        theme.palette.mode === "light"
+          ? `linear-gradient(165deg, ${alpha("#0f172a", 0.04)} 0%, ${theme.palette.background.default} 55%, ${theme.palette.background.paper} 100%)`
+          : `linear-gradient(165deg, #0a0c10 0%, ${theme.palette.background.default} 100%)`,
     },
 
     rightGroup: {
